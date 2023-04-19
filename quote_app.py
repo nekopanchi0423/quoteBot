@@ -15,13 +15,13 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-LINE_CHANNEL_ACCESS_TOKEN = config.LINE_CHANNEL_ACCESS_TOKEN
-LINE_CHANNEL_SECRET = config.LINE_CHANNEL_SECRET
+#LINE_CHANNEL_ACCESS_TOKEN = config.LINE_CHANNEL_ACCESS_TOKEN
+#LINE_CHANNEL_SECRET = config.LINE_CHANNEL_SECRET
 
-DEEPL_API_LEY = config.DEEPL_API_LEY
+#DEEPL_API_LEY = config.DEEPL_API_LEY
 DEEPL_URL = "https://api-free.deepl.com/v2/translate"
 
-QUOTE_API_KEY = config.QUOTE_API_KEY
+#QUOTE_API_KEY = config.QUOTE_API_KEY
 QUOTE_URL = "https://api.api-ninjas.com/v1/quotes?category="
 
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
