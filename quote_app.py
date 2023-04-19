@@ -1,4 +1,3 @@
-import config
 import requests
 from gtts import gTTS
 from flask import Flask, request, abort
