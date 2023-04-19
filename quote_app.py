@@ -18,7 +18,7 @@ app = Flask(__name__)
 #LINE_CHANNEL_ACCESS_TOKEN = config.LINE_CHANNEL_ACCESS_TOKEN
 #LINE_CHANNEL_SECRET = config.LINE_CHANNEL_SECRET
 
-#DEEPL_API_LEY = config.DEEPL_API_LEY
+#DEEPL_API_LEY = config.DEEPL_API_KEY
 DEEPL_URL = "https://api-free.deepl.com/v2/translate"
 
 #QUOTE_API_KEY = config.QUOTE_API_KEY
