@@ -62,7 +62,7 @@ def handle_message(event):
         if response.status_code == requests.codes.ok:
             quote = response.json()[0]["quote"]
             author = response.json()[0]["author"]
-            english_text = "{}\n〜 {} 〜".format(quote, author)
+            english_text = "{}\n〜 {}".format(quote, author)
         else:
             print("quote api error:", response.status_code, response.text)
             return
@@ -77,7 +77,7 @@ def handle_message(event):
 
         response = requests.post(DEEPL_URL, params)
         translate_text = response.json()["translations"][0]["text"]
-        reply_message = "【English】\n{}\n\n【日本語】\n{}".format(english_text, translate_text)
+        reply_message = "【English】\n{}\n\n【日本語】\n{}〜".format(english_text, translate_text)
     else:
         reply_message = line_message
 
