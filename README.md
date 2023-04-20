@@ -1,5 +1,6 @@
 # 英語名言Bot
-英語と日本語に翻訳した名言を送ってくれるLINE Botです。英語学習などに使えます。
+英語と日本語に翻訳した名言を送ってくれるLINE Botです。<br>
+名言が楽しめるだけではなく、英語学習などにも活用できます。
 
 # 参考サイト
 [1][DeepL API](https://www.deepl.com/ja/pro-api?cta=header-pro-api/)<br>
