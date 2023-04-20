@@ -1,8 +1,8 @@
 # 英語名言Bot
 英語と日本語に翻訳した名言を送ってくれるLINE Botです。<br>
-名言が楽しめるだけではなく、英語学習などにも活用できます。
+名言が楽しめるだけではなく、英語学習などにも活用できます。<br>
 
-# 参考サイト
+## 参考サイト
 [1][DeepL API](https://www.deepl.com/ja/pro-api?cta=header-pro-api/)<br>
 [2][API Ninjas Quote API](https://api-ninjas.com/api/quotes)<br>
 [3][RenderにLINE Botのコードをデプロイする](https://zenn.dev/protoout/articles/56-line-bot-render-deploy)<br>
