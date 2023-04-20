@@ -1,5 +1,5 @@
-import config
 import requests, os
+from dotenv import load_dotenv
 from gtts import gTTS
 from flask import Flask, request, abort
 
@@ -14,6 +14,9 @@ from linebot.models import (
 )
 
 app = Flask(__name__)
+
+# 環境変数を上書き実行する
+load_dotenv(override=True)
 
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
 LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
