@@ -1,7 +1,7 @@
 import requests, os
 from dotenv import load_dotenv
 from gtts import gTTS
-from flask import Flask, request, abort
+from flask import Flask, request, abort, render_template, send_from_directory
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -21,7 +21,7 @@ load_dotenv(override=True)
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
 LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
 
-DEEPL_API_LEY = os.getenv("DEEPL_API_KEY")
+DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
 DEEPL_URL = "https://api-free.deepl.com/v2/translate"
 
 QUOTE_API_KEY = os.getenv("QUOTE_API_KEY")
@@ -30,6 +30,15 @@ QUOTE_URL = "https://api.api-ninjas.com/v1/quotes?category="
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
+@app.route("/")
+def home():
+    home_url = request.url_root
+    print(home_url)
+    return render_template('home.html')
+
+@app.route("/audio/audio_english_text.mp3")
+def play_music():
+    return send_from_directory("audio", "audio_english_text.mp3")
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -72,7 +81,7 @@ def handle_message(event):
 
         # 名言を日本語に翻訳する
         params = {
-            "auth_key" : DEEPL_API_LEY,
+            "auth_key" : DEEPL_API_KEY,
             "text" : english_text,
             "source_lang" : "EN",
             "target_lang" : "JA"
@@ -89,7 +98,7 @@ def handle_message(event):
 
     # 音声変換した英語テキストを送信する
     audio_text = gTTS(english_text, lang='en') 
-    #audio_text.save('audio_english_text.mp3')
+    audio_text.save('/audio/audio_english_text.mp3')
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8000)
