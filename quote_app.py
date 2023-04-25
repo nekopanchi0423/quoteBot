@@ -36,9 +36,12 @@ def home():
     print(home_url)
     return render_template('home.html')
 
-@app.route("/audio/audio_english_text.mp3")
-def play_music():
-    return send_from_directory("audio", "audio_english_text.mp3")
+@app.route("/")
+
+
+#@app.route("/audio/audio_english_text.mp3")
+#def play_music():
+#    return send_from_directory("audio", "audio_english_text.mp3")
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -98,7 +101,7 @@ def handle_message(event):
 
     # 音声変換した英語テキストを送信する
     audio_text = gTTS(english_text, lang='en') 
-    audio_text.save('/audio/audio_english_text.mp3')
+    #audio_text.save('/audio/audio_english_text.mp3')
 
 if __name__ == "__main__":
     app.run(host="localhost", port=8000)
